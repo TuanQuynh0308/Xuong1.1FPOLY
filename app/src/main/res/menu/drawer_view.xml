@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_PhieuXuat"
+            android:icon="@drawable/ic_phieu"
+            android:title="Phiếu Xuất Kho"/>
+        <item
+            android:id="@+id/nav_LoaiSanPham"
+            android:icon="@drawable/ic_kindofproduct"
+            android:title="Loại Sản Phẩm"/>
+        <item
+            android:id="@+id/nav_SanPham"
+            android:icon="@drawable/ic_product"
+            android:title="Sản Phẩm"/>
+        <item
+            android:id="@+id/nav_ThanhVien"
+            android:icon="@drawable/ic_customer"
+            android:title="Thành Viên"/>
+
+        <item android:title="Thống kê">
+            <menu>
+                <item
+                    android:id="@+id/sub_Export"
+                    android:icon="@drawable/ic_export"
+                    android:title="Xuất kho"/>
+                <item
+                    android:id="@+id/sub_Import"
+                    android:icon="@drawable/ic_import"
+                    android:title="Tồn kho"/>
+            </menu>
+        </item>
+        <item android:title="Người dùng">
+            <menu>
+                <item
+                    android:id="@+id/sub_AddUser"
+                    android:icon="@drawable/ic_adduser"
+                    android:visible="false"
+                    android:title="Thêm Thủ Kho"/>
+                <item
+                    android:id="@+id/sub_Pass"
+                    android:icon="@drawable/ic_pass"
+                    android:title="Đổi mật khẩu"/>
+                <item
+                    android:id="@+id/sub_Logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Đăng xuất"/>
+            </menu>
+        </item>
+    </group>
+</menu>
