@@ -7,19 +7,65 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
+    static final String dbName="QLKH";
+    static final int dbVersion=1;
     public DbHelper(Context context) {
-        super(context, "file.db", null, 1);
+        super(context, dbName, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Bill(id int primary key autoincrement ,name text,quantity integer,createByUser text, createdDate text,note text)");
-        db.execSQL("create table BillDetail(id int primary key autoincrement,billID integer,quantity integer)");
-        db.execSQL("create table Product(id integer  primary key autoincrement,name text,quatity integer,price text,photo text,userName )");
-        db.execSQL("create table User (userName text primary key,password text,numberPhone text,positon text,avatar text,profile text,lastLogin text,screatedDate text,lastAction text )");
+//        db.execSQL("create table Bill(id int primary key autoincrement ,name text,quantity integer,createByUser text, createdDate text,note text)");
+//        db.execSQL("create table BillDetail(id int primary key autoincrement,billID integer,quantity integer)");
+//        db.execSQL("create table Product(id integer  primary key autoincrement,name text,quatity integer,price text,photo text,userName )");
+//        db.execSQL("create table User (userName text primary key,password text,numberPhone text,positon text,avatar text,profile text,lastLogin text,screatedDate text,lastAction text )");
+//
+//        db.execSQL("INSERT INTO User (userName, password, numberPhone, positon, avatar, profile, lastLogin, createdDate, lastAction)\n" +
+//                "        VALUES ('quynhltph31990', '123456', '1234567890', 1, 'john_avatar.jpg', 'User profile information', '2023-10-14', '2023-10-14', '2023-10-14');");
 
-        db.execSQL("INSERT INTO User (userName, password, numberPhone, positon, avatar, profile, lastLogin, createdDate, lastAction)\n" +
-                "        VALUES ('quynhltph31990', '123456', '1234567890', 1, 'john_avatar.jpg', 'User profile information', '2023-10-14', '2023-10-14', '2023-10-14');");
+//        String createTableThuThu="create table ThuThu (" +
+//                "maTT TEXT PRIMARY KEY," +
+//                "hoTen TEXT NOT NULL," +
+//                "matKhau TEXT NOT NULL)";
+//        db.execSQL(createTableThuThu);
+
+
+        //Tạo bảng ThanhVien
+        String createTableThanhVien="create table ThanhVien (" +
+                "maTV TEXT PRIMARY KEY," +
+                "hoTen TEXT NOT NULL," +
+                "matKhau TEXT NOT NULL)";
+        db.execSQL(createTableThanhVien);
+
+        //Tạo bảng LoaiSach
+        String createTableLoaiSanPham="create table LoaiSanPham (" +
+                "maLoai INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tenLoai TEXT NOT NULL)";
+        db.execSQL(createTableLoaiSanPham);
+
+
+        //Tạo bảng Sach
+        String createTableSanPham="create table SanPham (" +
+                "maSp INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tenSp TEXT NOT NULL," +
+                "giaSp INTEGER NOT NULL," +
+                "soLuong INTEGER," +
+                "soLuuKho INTEGER," +
+                "anhSp BLOB," +
+                "maLoai INTEGER REFERENCES LoaiSach(maLoai))";
+        db.execSQL(createTableSanPham);
+
+
+        //Tạo bảng PhieuMuon
+//        String createTablePhieuMuon ="create table PhieuMuon (" +
+//                "maPM INTEGER PRIMARY KEY AUTOINCREMENT," +
+//                "maTT TEXT REFERENCES ThuThu(maTT)," +
+//                "maTV INTEGER REFERENCES ThanhVien(maTV)," +
+//                "maSach INTEGER REFERENCES Sach(maSach)," +
+//                "tienThue INTEGER NOT NULL," +
+//                "ngay DATE NOT NULL," +
+//                "traSach INTEGER NOT NULL)";
+//        db.execSQL(createTablePhieuMuon);
 
     }
 
