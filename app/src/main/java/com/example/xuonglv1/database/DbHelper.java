@@ -55,16 +55,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(createTableSanPham);
 
 
-        //Tạo bảng PhieuMuon
-//        String createTablePhieuMuon ="create table PhieuMuon (" +
-//                "maPM INTEGER PRIMARY KEY AUTOINCREMENT," +
-//                "maTT TEXT REFERENCES ThuThu(maTT)," +
-//                "maTV INTEGER REFERENCES ThanhVien(maTV)," +
-//                "maSach INTEGER REFERENCES Sach(maSach)," +
-//                "tienThue INTEGER NOT NULL," +
-//                "ngay DATE NOT NULL," +
-//                "traSach INTEGER NOT NULL)";
-//        db.execSQL(createTablePhieuMuon);
+
 
     }
 

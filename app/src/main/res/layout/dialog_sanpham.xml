@@ -64,7 +64,7 @@
         android:layout_marginBottom="10dp"
         />
     <ImageView
-        android:id="@+id/imgAnhQR"
+        android:id="@+id/imgAnhSP_Ud"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="10dp"
