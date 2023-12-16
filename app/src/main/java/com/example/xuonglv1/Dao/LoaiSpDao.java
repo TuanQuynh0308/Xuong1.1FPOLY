@@ -1,13 +1,12 @@
 package com.example.xuonglv1.Dao;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.xuonglv1.Model.LoaiSp;
-import com.example.xuonglv1.activity.database.DbHelper;
+import com.example.xuonglv1.database.DbHelper;
 
 import java.util.ArrayList;
 import java.util.List;

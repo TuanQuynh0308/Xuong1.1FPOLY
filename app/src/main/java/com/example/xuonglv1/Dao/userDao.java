@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.xuonglv1.Model.User;
-import com.example.xuonglv1.activity.database.DbHelper;
+import com.example.xuonglv1.database.DbHelper;
 
 import java.util.ArrayList;
 

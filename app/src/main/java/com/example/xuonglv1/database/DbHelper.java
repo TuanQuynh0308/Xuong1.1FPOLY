@@ -1,4 +1,4 @@
-package com.example.xuonglv1.activity.database;
+package com.example.xuonglv1.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -50,7 +50,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 "tenSp TEXT NOT NULL," +
                 "giaSp INTEGER NOT NULL," +
                 "soLuong INTEGER," +
-                "soLuuKho INTEGER," +
                 "anhSp BLOB," +
                 "maLoai INTEGER REFERENCES LoaiSach(maLoai))";
         db.execSQL(createTableSanPham);
