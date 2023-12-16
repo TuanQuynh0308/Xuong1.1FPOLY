@@ -69,7 +69,7 @@ public class SanPham_Adapter extends ArrayAdapter<SanPham> {
             imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    frgSanPham.xoa(String.valueOf(item.getMaSP()));
                 }
             });
 

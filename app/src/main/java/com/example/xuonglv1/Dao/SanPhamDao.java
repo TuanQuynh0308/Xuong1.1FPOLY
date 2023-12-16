@@ -39,7 +39,7 @@ public class SanPhamDao {
         return db.update("SanPham",values,"maSp=?",new String[]{String.valueOf(obj.getMaSP())});
     }
     public int delete(String id){
-        return db.delete("NganHang","Id=?",new String[]{id});
+        return db.delete("SanPham","maSp=?",new String[]{id});
     }
 
     @SuppressLint("Range")
