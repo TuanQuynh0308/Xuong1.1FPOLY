@@ -12,7 +12,6 @@ import com.example.xuonglv1.R;
 public class frg_thanhVien extends Fragment {
 
     public frg_thanhVien() {
-        // Required empty public constructor
     }
 
     @Override
