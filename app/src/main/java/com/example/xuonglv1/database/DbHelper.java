@@ -6,9 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.text.SimpleDateFormat;
+
 public class DbHelper extends SQLiteOpenHelper {
     static final String dbName="QLKH";
     static final int dbVersion=1;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     public DbHelper(Context context) {
         super(context, dbName, null, 1);
     }
@@ -29,30 +32,21 @@ public class DbHelper extends SQLiteOpenHelper {
 //                "matKhau TEXT NOT NULL)";
 //        db.execSQL(createTableThuThu);
 
+        //tạo bảng ThanhVien
 
-        //Tạo bảng ThanhVien
-        String createTableThanhVien="create table ThanhVien (" +
-                "maTV TEXT PRIMARY KEY," +
-                "hoTen TEXT NOT NULL," +
-                "matKhau TEXT NOT NULL)";
-        db.execSQL(createTableThanhVien);
+        db.execSQL("create table User(username TEXT PRIMARY KEY," +
+                "password TEXT NOT NULL," +
+                "numberPhone TEXT NOT NULL," +
+                "position INTEGER NOT NULL," +
+                "profile TEXT NOT NULL," +
+                "lastLogin DATE NOT NULL," +
+                "createdDate DATE NOT NULL)");
 
-        //Tạo bảng LoaiSach
-        String createTableLoaiSanPham="create table LoaiSanPham (" +
-                "maLoai INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "tenLoai TEXT NOT NULL)";
-        db.execSQL(createTableLoaiSanPham);
+        db.execSQL("insert into User values " +
+                "('admin','admin','0123456789','admin',1,'2023-12-17','2023-7-23')," +
+                "('nam','123456','0987654321','PNam',0,'2023-12-17','2023-7-23')," +
+                "('quynh','123456','0596830582','TQuynh',0,'2023-12-17','2023-7-23')");
 
-
-        //Tạo bảng Sach
-        String createTableSanPham="create table SanPham (" +
-                "maSp INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "tenSp TEXT NOT NULL," +
-                "giaSp INTEGER NOT NULL," +
-                "soLuong INTEGER," +
-                "anhSp BLOB," +
-                "maLoai INTEGER REFERENCES LoaiSach(maLoai))";
-        db.execSQL(createTableSanPham);
 
 
 

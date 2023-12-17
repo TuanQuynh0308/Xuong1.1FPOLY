@@ -16,20 +16,20 @@ import androidx.annotation.Nullable;
 import com.example.xuonglv1.Dao.SanPhamDao;
 import com.example.xuonglv1.Model.SanPham;
 import com.example.xuonglv1.R;
-import com.example.xuonglv1.fragment.frg_sanPham;
+import com.example.xuonglv1.fragment.Frg_sanPham;
 
 import java.util.ArrayList;
 
 public class SanPham_Adapter extends ArrayAdapter<SanPham> {
     private Context context;
-    frg_sanPham frgSanPham;
+    Frg_sanPham frgSanPham;
     private ArrayList<SanPham> list;
     SanPhamDao sanPhamDao;
     TextView txtMasp,txtTenSp,txtGiaSp,txtLoaisp,txtSoLuong;
     ImageView imgAnhSp,imgDelete;
     byte[] hinhAnh;
 
-    public SanPham_Adapter(@NonNull Context context, frg_sanPham frgSanPham, ArrayList<SanPham> list) {
+    public SanPham_Adapter(@NonNull Context context, Frg_sanPham frgSanPham, ArrayList<SanPham> list) {
         super(context, 0,list);
         this.context = context;
         this.frgSanPham = frgSanPham;

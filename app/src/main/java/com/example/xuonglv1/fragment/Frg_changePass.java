@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.xuonglv1.R;
 
-public class frg_changePass extends Fragment {
+public class Frg_changePass extends Fragment {
 
-    public frg_changePass() {
+    public Frg_changePass() {
         // Required empty public constructor
     }
 

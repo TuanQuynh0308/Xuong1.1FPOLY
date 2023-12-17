@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.example.xuonglv1.Model.LoaiSp;
 import com.example.xuonglv1.R;
-import com.example.xuonglv1.fragment.frg_loaiSanPham;
+import com.example.xuonglv1.fragment.Frg_loaiSanPham;
 
 import java.util.ArrayList;
 
@@ -23,8 +23,8 @@ public class LoaiSpAdapter extends ArrayAdapter<LoaiSp> {
     private ArrayList<LoaiSp> list;
     TextView txtMa,txtloai;
     ImageView btnXoa;
-    frg_loaiSanPham fragment;
-    public LoaiSpAdapter(@NonNull Context context, ArrayList<LoaiSp> list, frg_loaiSanPham fragment) {
+    Frg_loaiSanPham fragment;
+    public LoaiSpAdapter(@NonNull Context context, ArrayList<LoaiSp> list, Frg_loaiSanPham fragment) {
         super(context, 0,list);
         this.context = context;
         this.list = list;
