@@ -24,7 +24,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class frg_loaiSanPham extends Fragment {
+public class Frg_loaiSanPham extends Fragment {
     ListView lv;
     FloatingActionButton fltAdd;
     LoaiSpAdapter adapter;

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/txtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên đăng nhập: "
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/txtNumberPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số điện thoại: "
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/txtPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chức vụ: "
+        android:textSize="16dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/txtProfile"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:text="Giới thiệu: "
+            android:layout_height="wrap_content"
+            android:textSize="16dp"/>
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/xoa"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtLastLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập lần cuối: "
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/txtCreatedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ngày tạo: "
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/txtLastAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hoạt động cuối: "
+        android:textSize="16dp"/>
+</LinearLayout>

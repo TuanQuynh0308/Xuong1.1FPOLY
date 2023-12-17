@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment;
 import com.example.xuonglv1.R;
 
 
-public class frg_phieuXuatKho extends Fragment {
+public class Frg_phieuXuatKho extends Fragment {
 
-    public frg_phieuXuatKho() {
+    public Frg_phieuXuatKho() {
         // Required empty public constructor
     }
     @Override

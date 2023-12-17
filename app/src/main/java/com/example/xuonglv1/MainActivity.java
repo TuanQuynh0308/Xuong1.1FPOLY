@@ -13,14 +13,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.xuonglv1.fragment.frg_addUser;
-import com.example.xuonglv1.fragment.frg_changePass;
-import com.example.xuonglv1.fragment.frg_loaiSanPham;
-import com.example.xuonglv1.fragment.frg_phieuXuatKho;
-import com.example.xuonglv1.fragment.frg_sanPham;
-import com.example.xuonglv1.fragment.frg_thanhVien;
-import com.example.xuonglv1.fragment.frg_thongKeTonKho;
-import com.example.xuonglv1.fragment.frg_thongKeXuatKho;
+import com.example.xuonglv1.fragment.Frg_addUser;
+import com.example.xuonglv1.fragment.Frg_changePass;
+import com.example.xuonglv1.fragment.Frg_loaiSanPham;
+import com.example.xuonglv1.fragment.Frg_phieuXuatKho;
+import com.example.xuonglv1.fragment.Frg_sanPham;
+import com.example.xuonglv1.fragment.Frg_user;
+import com.example.xuonglv1.fragment.Frg_thongKeTonKho;
+import com.example.xuonglv1.fragment.Frg_thongKeXuatKho;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         //dùng fragment_PhieuMuon làm home
         FragmentManager manager = getSupportFragmentManager();
-        frg_phieuXuatKho frgPX = new frg_phieuXuatKho();
+        Frg_phieuXuatKho frgPX = new Frg_phieuXuatKho();
         manager.beginTransaction()
                 .replace(R.id.flContent,frgPX)
                 .commit();
@@ -55,56 +55,56 @@ public class MainActivity extends AppCompatActivity {
                 FragmentManager manager = getSupportFragmentManager();
                 if(item.getItemId()==R.id.nav_PhieuXuat){
                     setTitle("Quản lý Phiếu xuất kho");
-                    frg_phieuXuatKho frgPhieuXuatKho = new frg_phieuXuatKho();
+                    Frg_phieuXuatKho frgPhieuXuatKho = new Frg_phieuXuatKho();
                     manager.beginTransaction()
                             .replace(R.id.flContent,frgPhieuXuatKho)
                             .commit();
                 }
                 if(item.getItemId()==R.id.nav_LoaiSanPham){
                     setTitle("Quản lý Loại sản phẩm");
-                    frg_loaiSanPham frgLoaiSanPham = new frg_loaiSanPham();
+                    Frg_loaiSanPham frgLoaiSanPham = new Frg_loaiSanPham();
                     manager.beginTransaction()
                             .replace(R.id.flContent,frgLoaiSanPham)
                             .commit();
                 }
                 if(item.getItemId()==R.id.nav_SanPham){
                     setTitle("Quản lý Sản phẩm");
-                    frg_sanPham frgSanPham = new frg_sanPham();
+                    Frg_sanPham frgSanPham = new Frg_sanPham();
                     manager.beginTransaction()
                             .replace(R.id.flContent,frgSanPham)
                             .commit();
                 }
                 if(item.getItemId()==R.id.nav_ThanhVien){
                     setTitle("Quản lý Thành viên");
-                    frg_thanhVien frgThanhVien = new frg_thanhVien();
+                    Frg_user frgThanhVien = new Frg_user();
                     manager.beginTransaction()
                             .replace(R.id.flContent, frgThanhVien)
                             .commit();
                 }
                 if(item.getItemId()==R.id.sub_Export){
                     setTitle("Thống kê Xuất kho");
-                    frg_thongKeXuatKho frgThongKeXuatKho = new frg_thongKeXuatKho();
+                    Frg_thongKeXuatKho frgThongKeXuatKho = new Frg_thongKeXuatKho();
                     manager.beginTransaction()
                             .replace(R.id.flContent, frgThongKeXuatKho)
                             .commit();
                 }
                 if(item.getItemId()==R.id.sub_Import){
                     setTitle("Thống kê Tồn kho");
-                    frg_thongKeTonKho frgThongKeTonKho = new frg_thongKeTonKho();
+                    Frg_thongKeTonKho frgThongKeTonKho = new Frg_thongKeTonKho();
                     manager.beginTransaction()
                             .replace(R.id.flContent, frgThongKeTonKho)
                             .commit();
                 }
                 if(item.getItemId()==R.id.sub_AddUser){
                     setTitle("Thêm người dùng");
-                    frg_addUser frgAddUser = new frg_addUser();
+                    Frg_addUser frgAddUser = new Frg_addUser();
                     manager.beginTransaction()
                             .replace(R.id.flContent, frgAddUser)
                             .commit();
                 }
                 if(item.getItemId()==R.id.sub_Pass){
                     setTitle("Thay đổi mật khẩu");
-                    frg_changePass frgChangePass = new frg_changePass();
+                    Frg_changePass frgChangePass = new Frg_changePass();
                     manager.beginTransaction()
                             .replace(R.id.flContent, frgChangePass)
                             .commit();

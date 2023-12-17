@@ -4,28 +4,24 @@ public class User {
     private String username;//khóa chính
     private String password;
     private String numberPhone;
-    private String postion;//chức v 1|0
-    private String avatar;
+    private Integer position;//chức v 1|0
     private String profile;//giới thiệu tóm tắt
     private String lastLogin;
     private String createdDate;//ngày tạo tk
-    private String lastAction;//hành động cuối trên hệ thống
     //create table USER (username text primary key, password text,numberphone text, position text
 
 
     public User() {
     }
 
-    public User(String username, String password, String numberPhone, String postion, String avatar, String profile, String lastLogin, String createdDate, String lastAction) {
+    public User(String username, String password, String numberPhone, Integer position, String profile, String lastLogin, String createdDate) {
         this.username = username;
         this.password = password;
         this.numberPhone = numberPhone;
-        this.postion = postion;
-        this.avatar = avatar;
+        this.position = position;
         this.profile = profile;
         this.lastLogin = lastLogin;
         this.createdDate = createdDate;
-        this.lastAction = lastAction;
     }
 
     public String getUsername() {
@@ -52,20 +48,12 @@ public class User {
         this.numberPhone = numberPhone;
     }
 
-    public String getPostion() {
-        return postion;
+    public Integer getPosition() {
+        return position;
     }
 
-    public void setPostion(String postion) {
-        this.postion = postion;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setPosition(Integer position) {
+        this.position = position;
     }
 
     public String getProfile() {
@@ -90,13 +78,5 @@ public class User {
 
     public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
-    }
-
-    public String getLastAction() {
-        return lastAction;
-    }
-
-    public void setLastAction(String lastAction) {
-        this.lastAction = lastAction;
     }
 }

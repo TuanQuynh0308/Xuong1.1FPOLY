@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroud"
-    tools:context=".fragment.frg_loaiSanPham">
+    tools:context=".fragment.Frg_loaiSanPham">
 
     <ListView
         android:id="@+id/lstLoaiSP"

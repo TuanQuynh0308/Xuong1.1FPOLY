@@ -1,45 +1,85 @@
 package com.example.xuonglv1.Dao;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.xuonglv1.Model.User;
 import com.example.xuonglv1.database.DbHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class userDao {
-    private  final DbHelper dbHelper;
+    private SQLiteDatabase db;
 
     public userDao(Context context) {
-        dbHelper = new DbHelper(context);
+        DbHelper dbHelper = new DbHelper(context);
+        db = dbHelper.getWritableDatabase();
     }
-    public ArrayList<User> selectAll(){
-        ArrayList<User>list= new ArrayList<>();
-        SQLiteDatabase database =dbHelper.getReadableDatabase();
-        try{
-            Cursor cursor =database.rawQuery("select * from User", null);
-            if (cursor.getCount()>0){
-                cursor.moveToFirst();
-            }while (!cursor.isAfterLast()){
-                User user = new User();
-                user.setUsername(cursor.getString(0));
-                user.setPassword(cursor.getString(1));
-                user.setNumberPhone(cursor.getString(2));
-                user.setPostion(cursor.getString(3));
-                user.setAvatar(cursor.getString(4));
-                user.setProfile(cursor.getString(5));
-                user.setLastLogin(cursor.getString(6));
-                user.setCreatedDate(cursor.getString(7));
-                user.setLastAction(cursor.getString(8));
-                list.add(user);
-                cursor.moveToNext();
-            }
-        }catch (Exception e){
-            e.printStackTrace();
+
+    public long insert (User obj){
+        ContentValues values = new ContentValues();
+        values.put("username",obj.getUsername());
+        values.put("password",obj.getPassword());
+        values.put("numberPhone",obj.getNumberPhone());
+        values.put("position",obj.getPosition());
+        values.put("profile",obj.getProfile());
+        values.put("lastLogin",obj.getLastLogin());
+        values.put("createdDate",obj.getCreatedDate());
+
+        return db.insert("User", null, values);
+    }
+
+    public int update(User obj){
+        ContentValues values = new ContentValues();
+        values.put("username",obj.getUsername());
+        values.put("password",obj.getPassword());
+        values.put("numberPhone",obj.getNumberPhone());
+        values.put("position",obj.getPosition());
+        values.put("profile",obj.getProfile());
+        values.put("lastLogin",obj.getLastLogin());
+        values.put("createdDate",obj.getCreatedDate());
+        return db.update("User", values, "username=?", new String[]{obj.getUsername()});
+    }
+
+    public int delete(String username){
+        return db.delete("User", "username=?", new String[]{username});
+    }
+
+    //get All data
+    public List<User> getAll(){
+        String sql = "SELECT * FROM ThanhVien";
+        return getData(sql);
+    }
+
+    //get data theo id
+    public User getID(String username){
+        String sql ="SELECT * FROM User WHERE username=?";
+        List<User> list = getData(sql,username);
+        return list.get(0);
+    }
+
+    //get data nhiều tham số
+    @SuppressLint("Range")
+    private List<User> getData(String sql, String...selectionArgs){
+        ArrayList<User> list = new ArrayList<>();
+        Cursor c = db.rawQuery(sql,selectionArgs);
+        while (c.moveToNext()){
+            User obj = new User();
+            obj.setUsername(c.getString(c.getColumnIndex("username")));
+            obj.setPassword(c.getString(c.getColumnIndex("password")));
+            obj.setNumberPhone(c.getString(c.getColumnIndex("numberPhone")));
+            obj.setPosition(Integer.valueOf(c.getString(c.getColumnIndex("position"))));
+            obj.setProfile(c.getString(c.getColumnIndex("profile")));
+            obj.setLastLogin(c.getString(c.getColumnIndex("lastLogin")));
+            obj.setCreatedDate(c.getString(c.getColumnIndex("createdDate")));
+            Log.i("//======",obj.toString());
+            list.add(obj);
         }
         return list;
     }
-
 }

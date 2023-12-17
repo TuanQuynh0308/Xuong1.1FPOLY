@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.xuonglv1.R;
 
-public class frg_addUser extends Fragment {
+public class Frg_thongKeXuatKho extends Fragment {
 
-    public frg_addUser() {
+    public Frg_thongKeXuatKho() {
         // Required empty public constructor
     }
 
@@ -19,6 +19,6 @@ public class frg_addUser extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_user, container, false);
+        return inflater.inflate(R.layout.fragment_thong_ke_xuat_kho, container, false);
     }
 }
