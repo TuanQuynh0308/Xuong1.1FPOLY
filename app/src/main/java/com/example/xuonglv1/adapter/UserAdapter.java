@@ -56,8 +56,8 @@ public class UserAdapter extends ArrayAdapter<User> {
             }
             txtProfile = v.findViewById(R.id.txtProfile);
             txtProfile.setText("Giới thiệu: " + item.getProfile());
-            txtLastLogin = v.findViewById(R.id.txtLastLogin);
-            txtProfile.setText("Đăng nhập lần cuối: " + item.getLastLogin());
+//            txtLastLogin = v.findViewById(R.id.txtLastLogin);
+//            txtProfile.setText("Đăng nhập lần cuối: " + item.getLastLogin());
             txtCreateDate = v.findViewById(R.id.txtCreatedDate);
             txtCreateDate.setText("Ngày tạo: " + item.getCreatedDate());
             btnDelete = v.findViewById(R.id.btnDelete);

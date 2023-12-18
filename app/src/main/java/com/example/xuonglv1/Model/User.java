@@ -14,15 +14,24 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, String numberPhone, Integer position, String profile, String lastLogin, String createdDate) {
+    public User(String username, String password, String numberPhone, Integer position, String profile, String createdDate) {
         this.username = username;
         this.password = password;
         this.numberPhone = numberPhone;
         this.position = position;
         this.profile = profile;
-        this.lastLogin = lastLogin;
         this.createdDate = createdDate;
     }
+
+//    public User(String username, String password, String numberPhone, Integer position, String profile, String lastLogin, String createdDate) {
+//        this.username = username;
+//        this.password = password;
+//        this.numberPhone = numberPhone;
+//        this.position = position;
+//        this.profile = profile;
+//        this.lastLogin = lastLogin;
+//        this.createdDate = createdDate;
+//    }
 
     public String getUsername() {
         return username;
@@ -64,13 +73,13 @@ public class User {
         this.profile = profile;
     }
 
-    public String getLastLogin() {
-        return lastLogin;
-    }
-
-    public void setLastLogin(String lastLogin) {
-        this.lastLogin = lastLogin;
-    }
+//    public String getLastLogin() {
+//        return lastLogin;
+//    }
+//
+//    public void setLastLogin(String lastLogin) {
+//        this.lastLogin = lastLogin;
+//    }
 
     public String getCreatedDate() {
         return createdDate;
