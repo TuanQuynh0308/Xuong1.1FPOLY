@@ -40,6 +40,22 @@ public class DbHelper extends SQLiteOpenHelper {
                 "position INTEGER NOT NULL," +
                 "profile TEXT NOT NULL," +
                 "createdDate TEXT NOT NULL)");
+        //Tạo bảng LoaiSp
+        String createTableLoaiSanPham="create table LoaiSanPham (" +
+                "maLoai INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tenLoai TEXT NOT NULL)";
+        db.execSQL(createTableLoaiSanPham);
+
+
+        //Tạo bảng sp
+        String createTableSanPham="create table SanPham (" +
+                "maSp INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "tenSp TEXT NOT NULL," +
+                "giaSp INTEGER NOT NULL," +
+                "soLuong INTEGER," +
+                "anhSp BLOB," +
+                "maLoai INTEGER REFERENCES LoaiSach(maLoai))";
+        db.execSQL(createTableSanPham);
 
 //        db.execSQL("insert into User values " +
 //                "('admin','admin','0123456789','admin',1,'2023-12-17','2023-7-23')," +

@@ -13,7 +13,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.xuonglv1.fragment.Frg_addUser;
+//import com.example.xuonglv1.fragment.Frg_addUser;
 import com.example.xuonglv1.fragment.Frg_changePass;
 import com.example.xuonglv1.fragment.Frg_loaiSanPham;
 import com.example.xuonglv1.fragment.Frg_phieuXuatKho;
@@ -95,13 +95,13 @@ public class MainActivity extends AppCompatActivity {
                             .replace(R.id.flContent, frgThongKeTonKho)
                             .commit();
                 }
-                if(item.getItemId()==R.id.sub_AddUser){
-                    setTitle("Thêm người dùng");
-                    Frg_addUser frgAddUser = new Frg_addUser();
-                    manager.beginTransaction()
-                            .replace(R.id.flContent, frgAddUser)
-                            .commit();
-                }
+//                if(item.getItemId()==R.id.sub_AddUser){
+//                    setTitle("Thêm người dùng");
+//                    Frg_addUser frgAddUser = new Frg_addUser();
+//                    manager.beginTransaction()
+//                            .replace(R.id.flContent, frgAddUser)
+//                            .commit();
+//                }
                 if(item.getItemId()==R.id.sub_Pass){
                     setTitle("Thay đổi mật khẩu");
                     Frg_changePass frgChangePass = new Frg_changePass();
