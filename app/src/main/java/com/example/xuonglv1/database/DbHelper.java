@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 public class DbHelper extends SQLiteOpenHelper {
     static final String dbName="QLKH";
     static final int dbVersion=1;
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
     public DbHelper(Context context) {
         super(context, dbName, null, 1);
     }
@@ -39,13 +39,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 "numberPhone TEXT NOT NULL," +
                 "position INTEGER NOT NULL," +
                 "profile TEXT NOT NULL," +
-                "lastLogin DATE NOT NULL," +
-                "createdDate DATE NOT NULL)");
+                "createdDate TEXT NOT NULL)");
 
-        db.execSQL("insert into User values " +
-                "('admin','admin','0123456789','admin',1,'2023-12-17','2023-7-23')," +
-                "('nam','123456','0987654321','PNam',0,'2023-12-17','2023-7-23')," +
-                "('quynh','123456','0596830582','TQuynh',0,'2023-12-17','2023-7-23')");
+//        db.execSQL("insert into User values " +
+//                "('admin','admin','0123456789','admin',1,'2023-12-17','2023-7-23')," +
+//                "('nam','123456','0987654321','PNam',0,'2023-12-17','2023-7-23')," +
+//                "('quynh','123456','0596830582','TQuynh',0,'2023-12-17','2023-7-23')");
 
 
 

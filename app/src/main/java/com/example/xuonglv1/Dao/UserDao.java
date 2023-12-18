@@ -13,10 +13,10 @@ import com.example.xuonglv1.database.DbHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class userDao {
+public class UserDao {
     private SQLiteDatabase db;
 
-    public userDao(Context context) {
+    public UserDao(Context context) {
         DbHelper dbHelper = new DbHelper(context);
         db = dbHelper.getWritableDatabase();
     }
@@ -28,7 +28,6 @@ public class userDao {
         values.put("numberPhone",obj.getNumberPhone());
         values.put("position",obj.getPosition());
         values.put("profile",obj.getProfile());
-        values.put("lastLogin",obj.getLastLogin());
         values.put("createdDate",obj.getCreatedDate());
 
         return db.insert("User", null, values);
@@ -41,7 +40,6 @@ public class userDao {
         values.put("numberPhone",obj.getNumberPhone());
         values.put("position",obj.getPosition());
         values.put("profile",obj.getProfile());
-        values.put("lastLogin",obj.getLastLogin());
         values.put("createdDate",obj.getCreatedDate());
         return db.update("User", values, "username=?", new String[]{obj.getUsername()});
     }
@@ -52,7 +50,7 @@ public class userDao {
 
     //get All data
     public List<User> getAll(){
-        String sql = "SELECT * FROM ThanhVien";
+        String sql = "SELECT * FROM User";
         return getData(sql);
     }
 
@@ -75,7 +73,6 @@ public class userDao {
             obj.setNumberPhone(c.getString(c.getColumnIndex("numberPhone")));
             obj.setPosition(Integer.valueOf(c.getString(c.getColumnIndex("position"))));
             obj.setProfile(c.getString(c.getColumnIndex("profile")));
-            obj.setLastLogin(c.getString(c.getColumnIndex("lastLogin")));
             obj.setCreatedDate(c.getString(c.getColumnIndex("createdDate")));
             Log.i("//======",obj.toString());
             list.add(obj);
