@@ -63,6 +63,12 @@ public class UserAdapter extends ArrayAdapter<User> {
             btnDelete = v.findViewById(R.id.btnDelete);
 
         }
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                frg_user.xoa(item.getUsername());
+            }
+        });
         return v;
     }
 }

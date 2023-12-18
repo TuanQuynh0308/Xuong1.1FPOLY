@@ -112,6 +112,7 @@ public class Frg_user extends Fragment {
             edtUsername.setText(item.getUsername());
             edtPassword.setText(item.getPassword());
             edtNumberPhone.setText(item.getNumberPhone());
+            edtPosition.setText(String.valueOf(item.getPosition()));
             edtProfile.setText(item.getProfile());
             edtCreatedDate.setText(item.getCreatedDate());
         }
