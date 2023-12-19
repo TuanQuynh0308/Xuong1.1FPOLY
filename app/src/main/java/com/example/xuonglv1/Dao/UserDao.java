@@ -33,6 +33,15 @@ public class UserDao {
         return db.insert("User", null, values);
     }
 
+    public int updatePass(User obj){
+        ContentValues values = new ContentValues();
+
+        values.put("username",obj.getUsername());
+        values.put("password",obj.getPassword());
+
+        return db.update("User", values, "username=?", new String[]{obj.getUsername()});
+    }
+
     public int update(User obj){
         ContentValues values = new ContentValues();
         values.put("username",obj.getUsername());
