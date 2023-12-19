@@ -59,7 +59,7 @@
                 android:paddingLeft="10dp"
                 android:background="@drawable/bgedittext"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox

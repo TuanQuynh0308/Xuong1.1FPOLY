@@ -1,8 +1,10 @@
 package com.example.xuonglv1.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +16,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
 //import com.example.xuonglv1.fragment.Frg_addUser;
+import com.example.xuonglv1.Dao.UserDao;
+import com.example.xuonglv1.Model.User;
 import com.example.xuonglv1.R;
 import com.example.xuonglv1.fragment.Frg_changePass;
 import com.example.xuonglv1.fragment.Frg_loaiSanPham;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawer;
     Toolbar toolbar;
     View mHeaderView;
+    TextView edUser;
+    UserDao userDao;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.flContent,frgPX)
                 .commit();
         NavigationView nv = findViewById(R.id.nvView);
+        //show user in header
+        mHeaderView = nv.getHeaderView(0);
+        edUser = mHeaderView.findViewById(R.id.tvUser);
+        Intent i = getIntent();
+        String user = i .getStringExtra("user");
+        userDao = new UserDao(this);
+        User user1 = userDao.getID(user);
+        String username = user1.getUsername();
+        edUser.setText("Welcome " + username);
 
         //Điều hướng navigation
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -111,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                 }
                 if(item.getItemId()==R.id.sub_Logout){
-//                    startActivity(new Intent(getApplicationContext(),Login.class));
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                     finish();
                 }
                 drawer.closeDrawers();
