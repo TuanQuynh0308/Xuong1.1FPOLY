@@ -1,4 +1,4 @@
-package com.example.xuonglv1;
+package com.example.xuonglv1.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,6 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
 //import com.example.xuonglv1.fragment.Frg_addUser;
+import com.example.xuonglv1.R;
 import com.example.xuonglv1.fragment.Frg_changePass;
 import com.example.xuonglv1.fragment.Frg_loaiSanPham;
 import com.example.xuonglv1.fragment.Frg_phieuXuatKho;

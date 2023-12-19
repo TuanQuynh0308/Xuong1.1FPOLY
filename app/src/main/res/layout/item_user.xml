@@ -51,10 +51,4 @@
         android:layout_height="wrap_content"
         android:text="Ngày tạo: "
         android:textSize="16dp"/>
-    <TextView
-        android:id="@+id/txtLastAction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hoạt động cuối: "
-        android:textSize="16dp"/>
 </LinearLayout>

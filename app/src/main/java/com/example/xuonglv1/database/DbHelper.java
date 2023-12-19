@@ -57,10 +57,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 "maLoai INTEGER REFERENCES LoaiSach(maLoai))";
         db.execSQL(createTableSanPham);
 
-//        db.execSQL("insert into User values " +
-//                "('admin','admin','0123456789','admin',1,'2023-12-17','2023-7-23')," +
-//                "('nam','123456','0987654321','PNam',0,'2023-12-17','2023-7-23')," +
-//                "('quynh','123456','0596830582','TQuynh',0,'2023-12-17','2023-7-23')");
+        db.execSQL("insert into User values " +
+                "('admin','admin','0123456789',0,'admin','2023-7-23')," +
+                "('nam','123456','0987654321',1,'PNam','2023-7-23')," +
+                "('quynh','123456','0596830582',1,'TQuynh','2023-7-23')");
 
 
 

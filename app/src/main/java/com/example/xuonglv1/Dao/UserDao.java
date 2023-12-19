@@ -71,12 +71,21 @@ public class UserDao {
             obj.setUsername(c.getString(c.getColumnIndex("username")));
             obj.setPassword(c.getString(c.getColumnIndex("password")));
             obj.setNumberPhone(c.getString(c.getColumnIndex("numberPhone")));
-            obj.setPosition(Integer.valueOf(c.getString(c.getColumnIndex("position"))));
+            obj.setPosition(Integer.parseInt(c.getString(c.getColumnIndex("position"))));
             obj.setProfile(c.getString(c.getColumnIndex("profile")));
             obj.setCreatedDate(c.getString(c.getColumnIndex("createdDate")));
-            Log.i("//======",obj.toString());
             list.add(obj);
         }
         return list;
+    }
+
+    //check login
+    public int checkLogin(String username, String password){
+        String sql = "SELECT * FROM User WHERE username=? AND password=?";
+        List<User> list = getData(sql,username,password);
+        if (list.size() == 0)
+            return -1;
+        return 1;
+
     }
 }
