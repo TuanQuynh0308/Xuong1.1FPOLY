@@ -67,7 +67,7 @@ public class SanPhamDao {
 
     //get id
     public SanPham getID(String id){
-        String sql = "SELECT *FROM SanPham WHERE Id=?";
+        String sql = "SELECT *FROM SanPham WHERE maSp=?";
         List<SanPham> list = getDaTa(sql,id);
         if (!list.isEmpty()) {
             return list.get(0);

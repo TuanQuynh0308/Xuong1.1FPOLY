@@ -28,6 +28,7 @@ import androidx.fragment.app.Fragment;
 import com.example.xuonglv1.Dao.HoaDonDao;
 import com.example.xuonglv1.Model.HoaDon;
 import com.example.xuonglv1.R;
+import com.example.xuonglv1.activities.HoaDonCtActivity;
 import com.example.xuonglv1.adapter.HoaDonAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -110,16 +111,16 @@ public class Frg_hoaDon extends Fragment {
 //            }
 //        });
 
-//        lvHoaDon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(getActivity(), HoaDonCtActivity.class);
-//                maHd = list.get(i).getMaHd();
-//                intent.putExtra("maHd",maHd);
-//                startActivity(intent);
-//
-//            }
-//        });
+        lvHoaDon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), HoaDonCtActivity.class);
+                maHd = list.get(i).getMaHd();
+                intent.putExtra("maHd",maHd);
+                startActivity(intent);
+
+            }
+        });
         return v;
     }
     public void capNhapLv() {
