@@ -21,7 +21,7 @@ import com.example.xuonglv1.Model.User;
 import com.example.xuonglv1.R;
 import com.example.xuonglv1.fragment.Frg_changePass;
 import com.example.xuonglv1.fragment.Frg_loaiSanPham;
-import com.example.xuonglv1.fragment.Frg_phieuXuatKho;
+import com.example.xuonglv1.fragment.Frg_hoaDon;
 import com.example.xuonglv1.fragment.Frg_sanPham;
 import com.example.xuonglv1.fragment.Frg_user;
 import com.example.xuonglv1.fragment.Frg_thongKeTonKho;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         //dùng fragment_PhieuMuon làm home
         FragmentManager manager = getSupportFragmentManager();
-        Frg_phieuXuatKho frgPX = new Frg_phieuXuatKho();
+        Frg_hoaDon frgPX = new Frg_hoaDon();
         manager.beginTransaction()
                 .replace(R.id.flContent,frgPX)
                 .commit();
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentManager manager = getSupportFragmentManager();
                 if(item.getItemId()==R.id.nav_PhieuXuat){
-                    setTitle("Quản lý Phiếu xuất kho");
-                    Frg_phieuXuatKho frgPhieuXuatKho = new Frg_phieuXuatKho();
+                    setTitle("Hóa Đơn");
+                    Frg_hoaDon frgPhieuXuatKho = new Frg_hoaDon();
                     manager.beginTransaction()
                             .replace(R.id.flContent,frgPhieuXuatKho)
                             .commit();

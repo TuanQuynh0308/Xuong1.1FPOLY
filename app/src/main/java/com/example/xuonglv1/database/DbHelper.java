@@ -40,6 +40,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 "position INTEGER NOT NULL," +
                 "profile TEXT NOT NULL," +
                 "createdDate TEXT NOT NULL)");
+        db.execSQL("insert into User values " +
+                "('admin','admin','0123456789',0,'admin','2023-7-23')," +
+                "('nam','123456','0987654321',1,'PNam','2023-7-23')," +
+                "('quynh','123456','0596830582',1,'TQuynh','2023-7-23')");
         //Tạo bảng LoaiSp
         String createTableLoaiSanPham="create table LoaiSanPham (" +
                 "maLoai INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -56,11 +60,22 @@ public class DbHelper extends SQLiteOpenHelper {
                 "anhSp BLOB," +
                 "maLoai INTEGER REFERENCES LoaiSach(maLoai))";
         db.execSQL(createTableSanPham);
+        String createTableHoaDon = "create table HoaDon(" +
+                "maHoaDon integer primary key autoincrement," +
+                " maUser integer references User(username)," +
+                " loaiHoaDon integer not null," +
+                " ngayThang date not null)";
+        db.execSQL(createTableHoaDon);
+        //Bảng CtHoaDon
+        String createTableCtHoaDon = "create table CtHoaDon(" +
+                "maCtHd integer primary key autoincrement," +
+                "maSp REFERENCES SanPham(maSp)," +
+                "maHoaDon REFERENCES HoaDon(maHoaDon)," +
+                "soLuong integer not null," +
+                "donGia integet not null  ) ";
+        db.execSQL(createTableCtHoaDon);
 
-        db.execSQL("insert into User values " +
-                "('admin','admin','0123456789',0,'admin','2023-7-23')," +
-                "('nam','123456','0987654321',1,'PNam','2023-7-23')," +
-                "('quynh','123456','0596830582',1,'TQuynh','2023-7-23')");
+
 
 
 

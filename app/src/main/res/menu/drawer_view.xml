@@ -4,7 +4,7 @@
         <item
             android:id="@+id/nav_PhieuXuat"
             android:icon="@drawable/ic_phieu"
-            android:title="Phiếu Xuất Kho"/>
+            android:title="Hóa Đơn"/>
         <item
             android:id="@+id/nav_LoaiSanPham"
             android:icon="@drawable/ic_kindofproduct"

@@ -37,10 +37,10 @@ public class LoginActivity extends AppCompatActivity {
         dao = new UserDao(this);
 
         //đọc user, pass trong SharedPreferences
-        SharedPreferences pref = getSharedPreferences("USER_FILE",MODE_PRIVATE);
-        edUserName.setText(pref.getString("USERNAME",""));
-        edPassword.setText(pref.getString("PASSWORD",""));
-        chkRememberPass.setChecked(pref.getBoolean("REMEMBER",false));
+        SharedPreferences preferences = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+        edUserName.setText(preferences.getString("userName", ""));
+        edPassword.setText((preferences.getString("passWord", "")));
+        chkRememberPass.setChecked(preferences.getBoolean("REMEMBER",false));
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,8 +85,8 @@ public class LoginActivity extends AppCompatActivity {
             edit.clear();
         }else{
             //lưu dữ liệu
-            edit.putString("USERNAME",u);
-            edit.putString("PASSWORD",p);
+            edit.putString("userName",u);
+            edit.putString("passWord",p);
             edit.putBoolean("REMEMBER",status);
         }
         //lưu lại toàn bộ
