@@ -16,13 +16,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#090909"
-        android:text="Mã loại sản phẩm: "
-        android:textSize="17dp"
-        />
+
     <TextView
         android:id="@+id/txtmaLoai"
         android:layout_width="wrap_content"
@@ -35,14 +29,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#090909"
-        android:text="Tên loại: "
-        android:textSize="18dp"
-        android:textStyle="bold"
-        />
+
     <TextView
         android:id="@+id/txttenloaisp"
         android:layout_width="wrap_content"

@@ -1,5 +1,6 @@
 package com.example.xuonglv1.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -26,8 +27,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-
-public class Frg_thongKeXuatKho extends Fragment {
+public class Frg_thongKeNhapKho extends Fragment {
     ArrayList<HoaDon> list;
     ThongKeDao thongKeDao;
     HoaDonDao hdDao;
@@ -36,7 +36,9 @@ public class Frg_thongKeXuatKho extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_frg_thong_ke_xuat_kho, container, false);
+        View v= inflater.inflate(R.layout.fragment_frg_thong_ke_nhap_kho, container, false);
+
+
         BarChart barChart = v.findViewById(R.id.barChart);
         hdDao = new HoaDonDao(getActivity());
         thongKeDao = new ThongKeDao(getActivity());
@@ -45,18 +47,21 @@ public class Frg_thongKeXuatKho extends Fragment {
         List<BarEntry> monthlyRevenueEntries = getMonthlyRevenue(list);
 
         updateBarChart(barChart, monthlyRevenueEntries);
+
+
         return v;
     }
+
     private List<BarEntry> getMonthlyRevenue(ArrayList<HoaDon> hoaDonList) {
         List<BarEntry> entries = new ArrayList<>();
         int[] monthlyRevenue = new int[12];
 
         for (HoaDon hoaDon : hoaDonList) {
-            if (hoaDon.getLoaiHoaDon()==1){
+            if (hoaDon.getLoaiHoaDon()==0){
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(hoaDon.getNgay());
                 int month = calendar.get(Calendar.MONTH);
-                monthlyRevenue[month] += thongKeDao.tinhTongTienXuat();
+                monthlyRevenue[month] += thongKeDao.tinhTongTienNhap();
             }
 
         }

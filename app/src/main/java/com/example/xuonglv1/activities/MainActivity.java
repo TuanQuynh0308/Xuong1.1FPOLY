@@ -25,7 +25,7 @@ import com.example.xuonglv1.fragment.Frg_hoaDon;
 import com.example.xuonglv1.fragment.Frg_sanPham;
 import com.example.xuonglv1.fragment.Frg_user;
 import com.example.xuonglv1.fragment.Frg_thongKeTonKho;
-import com.example.xuonglv1.fragment.Frg_thongKeXuatKho;
+import com.example.xuonglv1.fragment.Frg_thongKeXuat_Nhap;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                 }
                 if(item.getItemId()==R.id.sub_Export){
-                    setTitle("Thống kê Xuất kho");
-                    Frg_thongKeXuatKho frgThongKeXuatKho = new Frg_thongKeXuatKho();
+                    setTitle("Thống kê Nhập - Xuất");
+                    Frg_thongKeXuat_Nhap frgThongKeXuatKho = new Frg_thongKeXuat_Nhap();
                     manager.beginTransaction()
                             .replace(R.id.flContent, frgThongKeXuatKho)
                             .commit();

@@ -23,7 +23,7 @@
                 <item
                     android:id="@+id/sub_Export"
                     android:icon="@drawable/ic_export"
-                    android:title="Xuất kho"/>
+                    android:title="Nhập - Xuất"/>
                 <item
                     android:id="@+id/sub_Import"
                     android:icon="@drawable/ic_import"
