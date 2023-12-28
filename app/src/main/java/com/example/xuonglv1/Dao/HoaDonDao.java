@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 import com.example.xuonglv1.Model.HoaDon;
+import com.example.xuonglv1.Model.SanPham;
 import com.example.xuonglv1.database.DbHelper;
 
 import java.text.ParseException;
@@ -29,6 +30,15 @@ public class HoaDonDao {
     public List<HoaDon> getAll() {
         String sql = "Select * from HoaDon";
         return getData(sql);
+    }
+    public HoaDon getID(String id){
+        String sql = "SELECT *FROM HoaDon WHERE maHoaDon=?";
+        List<HoaDon> list = getData(sql,id);
+        if (!list.isEmpty()) {
+            return list.get(0);
+        } else {
+            return null;
+        }
     }
 
     public boolean insertHoaDon(HoaDon hd) {

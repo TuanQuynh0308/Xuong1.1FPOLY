@@ -69,9 +69,9 @@ public class CtHoaDonAdapter extends ArrayAdapter<CtHoaDon> {
             //
             sanPhamDao = new SanPhamDao(context);
             SanPham sp = sanPhamDao.getID(String.valueOf(item.getMaSp()));
-            tvSp.setText(sp.getTenSP() + "");
-            tvSl.setText(item.getSoLuong() + "");
-            tvThanhTien.setText(item.getDonGia() * item.getSoLuong() + "");
+            tvSp.setText("Tên sản phẩn: "+sp.getTenSP() );
+            tvSl.setText("Số lượng: "+item.getSoLuong());
+            tvThanhTien.setText("Thành tiền: "+item.getDonGia() * item.getSoLuong());
         }
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override

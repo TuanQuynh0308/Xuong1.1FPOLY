@@ -50,17 +50,17 @@ public class HoaDonAdapter extends ArrayAdapter {
             txtNgay = v.findViewById(R.id.tvNgay_itemHoaDon);
             btnDelete = v.findViewById(R.id.btnDelete_hoaDon);
 //
-            txtMaHd.setText(item.getMaHd() + "");
-            txtMaThuKho.setText(item.getMaUser());
+            txtMaHd.setText("Mã hóa đơn"+item.getMaHd());
+            txtMaThuKho.setText("Tên thủ kho: "+item.getMaUser());
             try {
-                txtNgay.setText(sfd.format(item.getNgay()));
+                txtNgay.setText("Ngày: "+ sfd.format(item.getNgay()));
             } catch (Exception e) {
                 e.printStackTrace();
             }
             if (item.getLoaiHoaDon() == 0) {
-                txtloaiHd.setText("Nhập");
+                txtloaiHd.setText("Hóa đơn: Nhập");
             } else {
-                txtloaiHd.setText("Xuất");
+                txtloaiHd.setText("Hóa đon: Xuất");
             }
         }
         btnDelete.setOnClickListener(new View.OnClickListener() {

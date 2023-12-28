@@ -44,8 +44,8 @@ public class LoaiSpAdapter extends ArrayAdapter<LoaiSp> {
             txtMa = v.findViewById(R.id.txtmaLoai);
             txtloai = v.findViewById(R.id.txttenloaisp);
             btnXoa = v.findViewById(R.id.btnxoa_loaisach);
-            txtMa.setText(item.getMaLoai()+"");
-            txtloai.setText(item.getTenLoai());
+            txtMa.setText("Mã loại: " +item.getMaLoai());
+            txtloai.setText("Tên loại: "+item.getTenLoai());
         }
         btnXoa.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -75,4 +75,19 @@ public class SanPhamDao {
             return null;
         }
     }
+
+    public void exportProduct(int productId, int quantity) {
+        String updateQuery = "UPDATE SanPham" +
+                " SET soLuong = soLuong - " + quantity +
+                " WHERE maSp = " + productId;
+        db.execSQL(updateQuery);
+    }
+
+    // Nhập sản phẩm và cập nhật tồn kho
+    public void importProduct(int productId, int quantity) {
+        String updateQuery = "UPDATE SanPham" +
+                " SET soLuong = soLuong + " + quantity +
+                " WHERE maSp = " + productId;
+        db.execSQL(updateQuery);
+    }
 }

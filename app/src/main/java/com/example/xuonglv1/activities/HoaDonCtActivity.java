@@ -15,8 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.xuonglv1.Dao.CtHoaDonDao;
+import com.example.xuonglv1.Dao.HoaDonDao;
 import com.example.xuonglv1.Dao.SanPhamDao;
 import com.example.xuonglv1.Model.CtHoaDon;
+import com.example.xuonglv1.Model.HoaDon;
 import com.example.xuonglv1.Model.SanPham;
 import com.example.xuonglv1.R;
 import com.example.xuonglv1.adapter.CtHoaDonAdapter;
@@ -39,6 +41,7 @@ public class HoaDonCtActivity extends AppCompatActivity {
     CtHoaDon hoaDonCt;
     SanPhamDao sanPhamDao;
     String tenSp;
+    HoaDonDao hoaDonDao;
     int maSp, giatien;
     int maHd;
 
@@ -106,6 +109,14 @@ public class HoaDonCtActivity extends AppCompatActivity {
                         edtSoLuong.setText("");
                         list.clear();
                         list.addAll(ctHoaDonDao.getAll(maHd));
+                        hoaDonDao=new HoaDonDao(HoaDonCtActivity.this);
+                        HoaDon hoaDon=hoaDonDao.getID(String.valueOf(hoaDonCt.getMaHoaDon()));
+                        if (hoaDon.getLoaiHoaDon()==0){
+                            sanPhamDao.importProduct(maSp,Integer.parseInt(soluong));
+                        }else {
+                            sanPhamDao.exportProduct(maSp, Integer.parseInt(soluong));
+                        }
+
                         adapter.notifyDataSetChanged();
                     } else {
                         Toast.makeText(HoaDonCtActivity.this, "Thêm fail", Toast.LENGTH_SHORT).show();
