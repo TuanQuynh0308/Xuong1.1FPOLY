@@ -61,13 +61,13 @@ public class Frg_thongKeNhapKho extends Fragment {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(hoaDon.getNgay());
                 int month = calendar.get(Calendar.MONTH);
-                monthlyRevenue[month] += thongKeDao.tinhTongTienNhap();
+                monthlyRevenue[month] += thongKeDao.tinhTongTienNhap(month+1);
             }
-
         }
 
-        for (int i = 0; i < monthlyRevenue.length; i++) {
-            entries.add(new BarEntry(i, monthlyRevenue[i]));
+        for (int i = 0; i < 12; i++) {
+            double totalMoney = thongKeDao.tinhTongTienNhap(i + 1);
+            entries.add(new BarEntry(i, (float) totalMoney));
         }
 
         return entries;

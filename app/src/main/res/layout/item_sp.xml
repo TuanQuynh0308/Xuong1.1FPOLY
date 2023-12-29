@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/imgAnhsp"
             android:layout_width="100dp"
-            android:layout_height="158dp"
+            android:layout_height="100dp"
             android:layout_marginRight="10dp"/>
         <LinearLayout
             android:layout_width="wrap_content"

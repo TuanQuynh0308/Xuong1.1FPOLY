@@ -52,17 +52,17 @@ public class Frg_thongKeXuatKho extends Fragment {
         int[] monthlyRevenue = new int[12];
 
         for (HoaDon hoaDon : hoaDonList) {
-            if (hoaDon.getLoaiHoaDon()==1){
+            if (hoaDon.getLoaiHoaDon()==0){
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(hoaDon.getNgay());
                 int month = calendar.get(Calendar.MONTH);
-                monthlyRevenue[month] += thongKeDao.tinhTongTienXuat();
+                monthlyRevenue[month] += thongKeDao.tinhTongTienXuat(month+1);
             }
-
         }
 
-        for (int i = 0; i < monthlyRevenue.length; i++) {
-            entries.add(new BarEntry(i, monthlyRevenue[i]));
+        for (int i = 0; i < 12; i++) {
+            double totalMoney = thongKeDao.tinhTongTienXuat(i + 1);
+            entries.add(new BarEntry(i, (float) totalMoney));
         }
 
         return entries;

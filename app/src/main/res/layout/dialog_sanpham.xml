@@ -90,6 +90,7 @@
             android:layout_height="40dp"
             android:layout_margin="20dp"
             android:text="Xác nhận"
+            android:background="@drawable/bgbutton"
             />
 
         <Button
@@ -97,6 +98,7 @@
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_margin="20dp"
+            android:background="@drawable/bgbutton"
             android:text="Hủy" />
     </LinearLayout>
 

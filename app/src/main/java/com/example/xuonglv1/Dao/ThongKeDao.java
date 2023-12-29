@@ -28,16 +28,16 @@ public class ThongKeDao {
     }
 
     @SuppressLint("Range")
-    public double tinhTongTienNhap() {
+    public double tinhTongTienNhap(int month) {
         double tongTienNhap = 0;
 
         // Truy vấn SQL sử dụng INNER JOIN để kết hợp thông tin từ CtHoaDon và HoaDon
-        String query = "SELECT CtHoaDon.soLuong * CtHoaDon.donGia AS tongTienNhap " +
+        String query = "SELECT SUM(CtHoaDon.soLuong * CtHoaDon.donGia) AS tongTienNhap " +
                 "FROM CtHoaDon " +
                 "INNER JOIN HoaDon ON CtHoaDon.maHoaDon = HoaDon.maHoaDon " +
-                "WHERE HoaDon.loaiHoaDon = 0";
+                "WHERE HoaDon.loaiHoaDon = 0 AND strftime('%m', HoaDon.ngayThang) = ?";
 
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, new String[]{String.format("%02d", month)});
 
         if (cursor != null && cursor.moveToFirst()) {
             // Lấy giá trị tổng tiền nhập từ kết quả truy vấn
@@ -49,24 +49,24 @@ public class ThongKeDao {
     }
 
     @SuppressLint("Range")
-    public double tinhTongTienXuat() {
-        double tongTienXuat = 0;
+    public double tinhTongTienXuat(int month) {
+        double tongTienNhap = 0;
 
-        // Truy vấn SQL sử dụng INNER JOIN và điều kiện WHERE
-        String query = "SELECT CtHoaDon.soLuong * CtHoaDon.donGia AS tongTienXuat " +
+        // Truy vấn SQL sử dụng INNER JOIN để kết hợp thông tin từ CtHoaDon và HoaDon
+        String query = "SELECT SUM(CtHoaDon.soLuong * CtHoaDon.donGia) AS tongTienNhap " +
                 "FROM CtHoaDon " +
                 "INNER JOIN HoaDon ON CtHoaDon.maHoaDon = HoaDon.maHoaDon " +
-                "WHERE HoaDon.loaiHoaDon = 1";
+                "WHERE HoaDon.loaiHoaDon = 1 AND strftime('%m', HoaDon.ngayThang) = ?";
 
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.rawQuery(query, new String[]{String.format("%02d", month)});
 
         if (cursor != null && cursor.moveToFirst()) {
-            // Lấy giá trị tổng tiền xuất từ kết quả truy vấn
-            tongTienXuat = cursor.getDouble(cursor.getColumnIndex("tongTienXuat"));
+            // Lấy giá trị tổng tiền nhập từ kết quả truy vấn
+            tongTienNhap = cursor.getDouble(cursor.getColumnIndex("tongTienNhap"));
             cursor.close();
         }
 
-        return tongTienXuat;
+        return tongTienNhap;
     }
 
     @SuppressLint("Range")

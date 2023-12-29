@@ -30,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/baseline_save_24"
+            android:background="@drawable/bgbutton"
             android:text="Save"
             android:layout_margin="20dp"
             />
@@ -37,6 +38,7 @@
             android:id="@+id/btnhuy_ud"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/bgbutton"
             android:text="Hủy"
             android:drawableStart="@drawable/baseline_cancel_24"
             android:layout_margin="20dp"
